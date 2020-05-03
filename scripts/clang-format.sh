@@ -36,7 +36,7 @@ cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
 if [[ ${CHECK_MODE} == 1 ]]
 then
-    for file in $( git status --porcelain *.h *.cc *.c *.mm | awk 'match($1, "A|M") { print $2 }' )
+    for file in $( git status --porcelain *.h *.cc *.c *.mm *.cpp | awk 'match($1, "A|M") { print $2 }' )
     do
         ${CLANG_FORMAT} -output-replacements-xml "${file}" | grep -c "<replacement " >/dev/null
         if [[ $? != 1 ]]
@@ -48,9 +48,9 @@ then
     done
 elif [[ ${DO_ALL} == 1 ]]
 then
-    find . \( -iname \*.cc -or -iname \*.c -or -iname \*.mm -or -iname \*.h \) -exec ${CLANG_FORMAT} -i {} \;
+    find . \( -iname \*.cc -or -iname \*.c -or -iname \*.mm -or -iname \*.h -or -iname \*.cpp \) -exec ${CLANG_FORMAT} -i {} \;
 else
-    for file in $( git status --porcelain *.h *.c *.cc *.mm | awk 'match($1, "A|M") { print $2 }' )
+    for file in $( git status --porcelain *.h *.c *.cc *.mm *.cpp | awk 'match($1, "A|M") { print $2 }' )
     do
         ${CLANG_FORMAT} -i "${file}"
     done
