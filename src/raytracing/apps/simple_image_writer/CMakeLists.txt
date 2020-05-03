@@ -1,7 +1,7 @@
 # Generic test that uses conan libs
-add_executable(raytracer main.cpp)
+add_executable(simple main.cpp)
 target_link_libraries(
-  raytracer PRIVATE
+  simple PRIVATE
     raytracing
     project_options 
     project_warnings 
