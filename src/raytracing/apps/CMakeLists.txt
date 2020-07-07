@@ -1,0 +1,3 @@
+add_subdirectory(simple_image_writer)
+add_subdirectory(raytrace)
+add_subdirectory(chapter_2)
