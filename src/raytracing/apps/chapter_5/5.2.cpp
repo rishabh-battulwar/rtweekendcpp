@@ -20,7 +20,7 @@ namespace {
  * @return true
  * @return false
  */
-bool hit_sphere(const point3 &center, const double radius, const ray &r)
+constexpr bool hit_sphere(const point3 &center, const double radius, const ray &r)
 {
   const vec3 oc = r.origin() - center;
   const auto a = dot(r.direction(), r.direction());
@@ -67,7 +67,7 @@ int main()
     for (int i = 0; i < image_width; ++i) {
       const auto u = double(i) / (image_width - 1);
       const auto v = double(j) / (image_height - 1);
-      ray r(origin, lower_left_corner + u * horizontal + v * vertical - origin);
+      const ray r(origin, lower_left_corner + u * horizontal + v * vertical - origin);
       const color pixel_color = ray_color(r);
       write_color(std::cout, pixel_color);
     }
