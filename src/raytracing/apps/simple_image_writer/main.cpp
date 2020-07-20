@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+#include "raytracing/math/color.h"
 #include "raytracing/math/vec3.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -24,10 +25,10 @@ auto main() -> int
     for (int i = 0; i < image_width; ++i) {
       auto r = double(i) / image_width;
       auto g = double(j) / image_height;
-      auto b = 0.2;
+      auto b = 0.25;
 
       raytracing::vec3 v(r, g, b);
-      v.write_color(std::cout);
+      raytracing::write_color(std::cout, v);
 
       auto uchar_color = v.to_uchar();
       img[index++] = static_cast<uint8_t>(uchar_color[0]);
