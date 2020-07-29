@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "raytracing/math/color.h"
+#include "raytracing/color.h"
 
 auto main() -> int
 {

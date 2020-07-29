@@ -1,4 +1,4 @@
-#include "raytracing/math/color.h"
+#include "raytracing/color.h"
 #include "raytracing/math/ray.h"
 
 #include <iostream>

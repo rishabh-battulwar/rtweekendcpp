@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "raytracing/math/color.h"
+#include "raytracing/color.h"
 #include "raytracing/math/vec3.h"
 
 #define STB_IMAGE_IMPLEMENTATION
